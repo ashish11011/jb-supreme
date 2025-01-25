@@ -9,8 +9,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "primary-dark": "#1b1818",
+        "primary-red": "#d92c28",
+      },
+      fontFamily: {
+        playfair: ["Playfair Display", "serif"],
+        comfortaa: ["Comfortaa", "serif"],
+        railway: ["Raleway", "sans-serif"],
+        "roboto-slab": ["Roboto Slab", "serif"],
       },
     },
   },
