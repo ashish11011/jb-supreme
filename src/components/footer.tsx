@@ -1,4 +1,5 @@
 import { details } from "framer-motion/client";
+import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -19,8 +20,16 @@ const Footer = () => {
         <div className=" flex justify-between gap-4">
           <p>Socials:</p>
           <div className=" flex text-right md:text-left flex-col">
-            <p>Instagram</p>
-            <p>Facebook</p>
+            <div className="flex gap-1 w-fit self-end md:self-start items-center">
+              <Phone size={18} />
+              <Link href={"tel:+918290767747"}>+91 8290767747</Link>
+            </div>
+            <div className="flex gap-1 items-center">
+              <Mail size={18} />
+              <Link href={"mailto:info@superaxlecompany.com"}>
+                info@superaxlecompany.com
+              </Link>
+            </div>
           </div>
         </div>
         <div className=" flex justify-between gap-4">

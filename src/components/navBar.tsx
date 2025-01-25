@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const NavBar = () => {
@@ -14,16 +15,25 @@ const NavBar = () => {
           alt=""
         />
       </div>
-      <div className=" hidden md:flex text-white items-center gap-2">
-        <p className=" hover:bg-neutral-800 px-3.5 cursor-pointer rounded py-2">
+      <div className=" hidden md:flex text-white items-center gap-4">
+        <Link
+          href={"/"}
+          className=" border-b-2 duration-200 border-transparent hover:border-red-700 px-2 cursor-pointer py-1"
+        >
           Home
-        </p>
-        <p className=" hover:bg-neutral-800 px-3.5 cursor-pointer rounded py-2">
+        </Link>
+        <Link
+          href={"/about-us"}
+          className=" border-b-2 duration-200 border-transparent hover:border-red-700 px-2 cursor-pointer py-1"
+        >
           About Us
-        </p>
-        <p className=" hover:bg-neutral-800 px-3.5 cursor-pointer rounded py-2">
+        </Link>
+        <Link
+          href={"/contact-us"}
+          className=" border-b-2 duration-200 border-transparent hover:border-red-700 px-2 cursor-pointer py-1"
+        >
           Contact Us
-        </p>
+        </Link>
       </div>
 
       <div className="flex md:hidden">
@@ -56,9 +66,9 @@ const NavBar = () => {
             </div>
 
             <div className=" mt-32 text-center text-white flex flex-col gap-4">
-              <p> Home</p>
-              <p> About Us</p>
-              <p> Contact Us</p>
+              <Link href={"/"}> Home</Link>
+              <Link href={"/about-us"}> About Us</Link>
+              <Link href={"/contact-us"}> Contact Us</Link>
             </div>
           </motion.div>
         ) : (

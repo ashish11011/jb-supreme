@@ -26,12 +26,12 @@ export default function Home() {
 
 function AboutAxle() {
   return (
-    <div className=" max-w-7xl w-full mx-auto px-6 md:px-4 py-8 flex md:flex-row flex-col gap-4">
+    <div className=" max-w-7xl w-full mx-auto px-6 md:px-4 py-8 flex md:flex-row-reverse flex-col gap-4">
       <div className=" w-full overflow-hidden h-auto">
         <img
           src="./axle.png"
           alt=""
-          className="w-full h-auto -rotate-45 object-contain"
+          className="w-4/5 mx-auto h-auto -rotate-45 object-contain"
         />
       </div>
       <div className=" flex flex-col gap-4 w-full">
@@ -94,8 +94,10 @@ function AboutAxle() {
 function HeroSection() {
   return (
     <div className=" h-screen w-full flex flex-col relative ">
-      <img
-        src="./hero-bg.jpg"
+      <Image
+        src="/hero-bg.jpg"
+        alt="hero-bg"
+        fill={true}
         className=" w-full -z-10 absolute top-0 left-0 h-full object-cover"
       />
       <div className=" w-full h-full bg-black opacity-50 -z-10 absolute top-0 left-0"></div>
@@ -114,7 +116,7 @@ function HeroSection() {
           </p>
           <Link
             href={"/contact-us"}
-            className=" text-white py-2 px-4 mx-auto md:mx-0 w-full rounded border text-center max-w-52 md:w-fit  mt-6 hover:bg-white font-bold hover:text-primary-red hover:border-primary-red duration-300  "
+            className=" text-white py-2  px-6 mx-auto md:mx-0 w-full border text-center max-w-52 md:w-fit  mt-6 hover:bg-white font-bold hover:text-primary-red hover:border-primary-dark duration-300  "
           >
             {" "}
             Talk to us{" "}
@@ -127,7 +129,7 @@ function HeroSection() {
 
 function AboutUsSection() {
   return (
-    <div className=" w-full px-6 md:px-4 flex flex-col md:flex-row md:gap-16 max-w-7xl mx-auto py-12">
+    <div className=" w-full px-6 md:px-4 flex flex-col md:flex-row md:gap-16 max-w-7xl mx-auto pb-6 pt-12">
       <div className=" w-full max-w-lg flex flex-col gap-6">
         <p className=" text-6xl font-semibold font-roboto-slab text-white">
           About Us
@@ -176,7 +178,7 @@ const aboutUsData = [
 
 function WeValueSection() {
   return (
-    <div className=" max-w-7xl w-full mx-auto px-6 md:px-4 py-8 flex md:flex-row flex-col gap-4">
+    <div className=" max-w-7xl w-full mt-4 mx-auto px-6 md:px-4 py-8 flex md:flex-row flex-col gap-4">
       {aboutUsData.map((item) => (
         <div className=" w-full flex flex-col p-3 px-4 border rounded-md border-gray-500 hover:shadow-sm duration-200 cursor-pointer hover:shadow-neutral-400 bg-neutral-800 gap-2">
           <div className=" flex  flex-col items-center justify-center gap-2">
