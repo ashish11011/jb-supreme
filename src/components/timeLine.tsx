@@ -23,7 +23,7 @@ function TimeLineSection() {
   return (
     <div className=" flex flex-col md:flex-row md:my-28 gap-6 my-8 md:gap-2">
       <div className=" flex flex-col  md:-translate-y-1/2 gap-2 border border-neutral-700 py-3 rounded-md text-gray-100 h-fit text-sm px-3 md:w-2/3 ">
-        <p className=" font-bold text-lg ">1983</p>
+        <p className=" font-bold text-lg ">1998</p>
         <p>
           Founded in 1998 by{" "}
           <span className=" text-primary-red font-semibold">
