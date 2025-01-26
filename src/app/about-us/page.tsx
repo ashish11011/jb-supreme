@@ -19,7 +19,7 @@ const Page = () => {
       </div>
       <div className=" px-2">
         <div className=" z-10 -translate-y-32 shadow-sm flex flex-col gap-4   shadow-neutral-600 rounded max-w-4xl mx-auto w-full text-white px-6 md:px-8 py-6 bg-primary-dark ">
-          <p className=" text-3xl md:text-4xl font-medium">About Us</p>
+          <p className=" text-3xl md:text-4xl font-roboto-slab font-medium">About Us</p>
           <p className=" text-gray-200">
             At Super Axle Company, we take pride in leading with innovation,
             quality, and teamwork. Whether you’re a team member, partner, or
@@ -27,6 +27,8 @@ const Page = () => {
           </p>
 
           <FounderProfile />
+
+          <p className=" text-2xl mt-4 -mb-6 font-semibold font-roboto-slab" >Our Growth & Achievements</p>
 
           <TimeLineSection />
         </div>

@@ -1,5 +1,5 @@
 import { details } from "framer-motion/client";
-import { Mail, Phone } from "lucide-react";
+import { Mail, MapPinned, Phone } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -34,9 +34,12 @@ const Footer = () => {
         </div>
         <div className=" flex justify-between gap-4">
           <p>Location:</p>
-          <div className=" text-right md:text-left flex flex-col">
+          <div className=" text-right gap-1 md:text-left flex">
+            <MapPinned />
+            <div className=" flex flex-col" >
             <p>C-81,GOL MARKET, JAIPUR</p>
             <p>Rajasthan, India 302017</p>
+            </div>
           </div>
         </div>
         <div className=" flex justify-between gap-4">
