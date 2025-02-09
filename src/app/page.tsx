@@ -40,7 +40,7 @@ function AboutAxle() {
         </p>
         <p>
           Axles are the backbone of any vehicle, ensuring stability, power
-          transmission, and smooth operation. At [Your Brand Name], we
+          transmission, and smooth operation. At JS Supreme Axle, we
           specialize in crafting high-performance axles that stand the test of
           time, delivering unparalleled durability and precision engineering.
         </p>
@@ -119,7 +119,7 @@ function HeroSection() {
             className=" text-white py-2  px-6 mx-auto md:mx-0 w-full border text-center max-w-52 md:w-fit  mt-6 hover:bg-white font-bold hover:text-primary-red hover:border-primary-dark duration-300  "
           >
             {" "}
-            Talk to us{" "}
+            Talk to Us{" "}
           </Link>
         </div>
       </div>

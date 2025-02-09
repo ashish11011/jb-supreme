@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "emailjs": "^4.0.3",
     "framer-motion": "^11.8.0",
     "lucide-react": "^0.447.0",
     "mongoose": "^8.7.2",

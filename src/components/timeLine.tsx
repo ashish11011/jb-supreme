@@ -32,7 +32,7 @@ function TimeLineSection() {
           in Hisar, Haryana, Super Axle Company started as a small team driven
           by dedication and a vision for quality. Today, it stands as a trusted
           name in the axle industry, delivering innovation and reliability
-          across India
+          across India.
         </p>
       </div>
       <div className=" hidden md:flex flex-col items-center justify-center h-56 mx-auto ">
@@ -49,7 +49,7 @@ function TimeLineSection() {
           </span>{" "}
           leadership, Super Axle Company grew tenfold with two factories in
           Jaipur, delivering top-quality axles nationwide and upholding its
-          legacy of excellence
+          legacy of excellence.
         </p>
       </div>
     </div>

@@ -12,11 +12,7 @@ const Footer = () => {
           info@superaxlecompany.com
         </p>
       </div>
-      {/* <div className="">
-        <span className=" text-[16rem] font-bold leading-tight">JB</span>
-        <span className=" ml-8 text-7xl font-semibold ">Supreme</span>
-      </div> */}
-      <div className=" mt-16 md:mt-8 flex flex-col md:flex-row gap-8 justify-between w-full ">
+      <div className=" mt-16 md:mt-8 flex flex-col lg:flex-row gap-8 justify-between w-full ">
         <div className=" flex justify-between gap-4">
           <p>Socials:</p>
           <div className=" flex text-right md:text-left flex-col">
@@ -37,7 +33,7 @@ const Footer = () => {
           <div className=" text-right gap-1 md:text-left flex">
             <MapPinned />
             <div className=" flex flex-col" >
-            <p>C-81,GOL MARKET, JAIPUR</p>
+            <p>C-81,Gol Market, Jaipur</p>
             <p>Rajasthan, India 302017</p>
             </div>
           </div>
@@ -53,8 +49,8 @@ const Footer = () => {
         <div className=" flex justify-between gap-4">
           <p>Expertise:</p>
           <div className=" text-right md:text-left flex  flex-col">
-            <p>CAR AXLE</p>
-            <p>AXLE PARTS</p>
+            <p className=" capitalize">car axle</p>
+            <p className=" capitalize">axle parts</p>
           </div>
         </div>
       </div>

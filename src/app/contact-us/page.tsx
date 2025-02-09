@@ -3,6 +3,7 @@ import Footer from "@/components/footer";
 import NavBar from "@/components/navBar";
 import { LoaderCircle, Mail, MapPinned, Phone } from "lucide-react";
 import React from "react";
+import {sendMail} from "./sendmail"
 
 const Page = () => {
   return (
@@ -31,15 +32,35 @@ export default Page;
 
 function ContactUsForm() {
   const [isLoading, setIsLoading] = React.useState(false);
+  const [formeSubmitionResponse, setFormeSubmitionResponse] = React.useState("");
+  function handleContactUsSubmit(e: any) {
+    setIsLoading(true);
+    e.preventDefault();
+    const formdata = new FormData(e.target);
+    const data = Object.fromEntries(formdata);
+    sendMail(data)
+    // console.log(msg);
+    setFormeSubmitionResponse("form is successfully submitted");
+    const timmer = setTimeout(() => {
+      setFormeSubmitionResponse("");
+    }, 5000);
+
+    e.target.reset();
+    setIsLoading(false);
+    return () => {
+      clearTimeout(timmer);
+    };
+  }
   return (
-    <form className=" flex flex-col gap-4 md:gap-8 mt-8" action="">
+    <form onSubmit={handleContactUsSubmit} className=" flex flex-col gap-4 md:gap-8 mt-8" action="">
       <div className=" flex flex-col md:flex-row gap-4">
         <div className=" w-full flex flex-col gap-1">
           <div className="">First Name</div>
           <input
             className=" bg-transparent focus:outline-none border border-neutral-700 focus:ring-1 rounded py-2 px-3 w-full "
             type="text"
-            placeholder="Enter your name"
+            name="first_name"
+            placeholder="Enter your first name"
           />
         </div>
         <div className=" w-full flex flex-col gap-1">
@@ -47,7 +68,8 @@ function ContactUsForm() {
           <input
             className=" bg-transparent focus:outline-none border border-neutral-700 focus:ring-1 rounded py-2 px-3 w-full "
             type="text"
-            placeholder="Enter your name"
+            name="last_name"
+            placeholder="Enter your last name"
           />
         </div>
       </div>
@@ -57,7 +79,8 @@ function ContactUsForm() {
           <input
             className=" bg-transparent focus:outline-none border border-neutral-700 focus:ring-1 rounded py-2 px-3 w-full "
             type="text"
-            placeholder="Enter your name"
+            name="email"
+            placeholder="Enter your email"
           />
         </div>
         <div className=" w-full flex flex-col gap-1">
@@ -65,7 +88,8 @@ function ContactUsForm() {
           <input
             className=" bg-transparent focus:outline-none border border-neutral-700 focus:ring-1 rounded py-2 px-3 w-full "
             type="text"
-            placeholder="Enter your name"
+            name="mobile"
+            placeholder="Enter your mobile number"
           />
         </div>
       </div>
@@ -75,16 +99,18 @@ function ContactUsForm() {
           rows={4}
           className=" bg-transparent focus:outline-none border border-neutral-700 focus:ring-1 rounded py-2 px-3 w-full "
           name="message"
+          placeholder="Enter your message"
           id=""
         ></textarea>
       </div>
-      <div className=" px-6 py-3 md:py-2 cursor-pointer w-full md:w-fit mt-6 text-lg border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 duration-200 self-end flex justify-center">
+      <p className=" capitalize underline text-green-500" >{formeSubmitionResponse}</p>
+      <button disabled={isLoading} type="submit" className=" px-6 py-3 md:py-2 cursor-pointer w-full md:w-fit mt-6 text-lg border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 duration-200 self-end flex justify-center">
         {isLoading ? (
           <LoaderCircle size={20} className=" animate-spin" />
         ) : (
           <p>Submit</p>
         )}
-      </div>
+      </button>
     </form>
   );
 }

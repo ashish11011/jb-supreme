@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import emailjs from "@emailjs/browser";
 export default function RootLayout({
   children,
 }: Readonly<{
