@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 import NavBar from "@/components/navBar";
 import { LoaderCircle, Mail, MapPinned, Phone } from "lucide-react";
 import React from "react";
-import {sendMail} from "./sendmail"
+import { sendMail } from "./sendmail"
 
 const Page = () => {
   return (
@@ -33,12 +33,17 @@ export default Page;
 function ContactUsForm() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [formeSubmitionResponse, setFormeSubmitionResponse] = React.useState("");
-  function handleContactUsSubmit(e: any) {
+  async function handleContactUsSubmit(e: any) {
     setIsLoading(true);
     e.preventDefault();
     const formdata = new FormData(e.target);
     const data = Object.fromEntries(formdata);
-    sendMail(data)
+    const res: any = await sendMail(data)
+    if (!res) {
+      setFormeSubmitionResponse("something went wrong, please try again later");
+      setIsLoading(false);
+      return;
+    }
     // console.log(msg);
     setFormeSubmitionResponse("form is successfully submitted");
     const timmer = setTimeout(() => {
@@ -125,7 +130,7 @@ function ShowContactDetail() {
         </div>
         <div className=" flex gap-2 items-center">
           <Mail size={20} color="white" />
-          <p>info@superaxlecompany.com</p>
+          <p>support@superaxlecompany.com</p>
         </div>
       </div>
       <div className=" border flex bg-neutral-800 min-h-32  gap-6 border-neutral-700 w-full py-6 px-8">

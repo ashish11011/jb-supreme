@@ -1,5 +1,6 @@
 import { details } from "framer-motion/client";
 import { Mail, MapPinned, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -9,7 +10,7 @@ const Footer = () => {
       <div className=" flex flex-col">
         <p className=" text-lg md:text-xl">Intrested in working with us?</p>
         <p className=" uppercase font-bold text-xl md:text-3xl">
-          info@superaxlecompany.com
+          support@superaxlecompany.com
         </p>
       </div>
       <div className=" mt-16 md:mt-8 flex flex-col lg:flex-row gap-8 justify-between w-full ">
@@ -22,8 +23,8 @@ const Footer = () => {
             </div>
             <div className="flex gap-1 items-center">
               <Mail size={18} />
-              <Link href={"mailto:info@superaxlecompany.com"}>
-                info@superaxlecompany.com
+              <Link href={"mailto:support@superaxlecompany.com"}>
+                support@superaxlecompany.com
               </Link>
             </div>
           </div>
@@ -33,8 +34,8 @@ const Footer = () => {
           <div className=" text-right gap-1 md:text-left flex">
             <MapPinned />
             <div className=" flex flex-col" >
-            <p>C-81,Gol Market, Jaipur</p>
-            <p>Rajasthan, India 302017</p>
+              <p>C-81,Gol Market, Jaipur</p>
+              <p>Rajasthan, India 302017</p>
             </div>
           </div>
         </div>
@@ -55,6 +56,12 @@ const Footer = () => {
         </div>
       </div>
       <div className="h-4"></div>
+
+      <div className=" bottom-6 right-6 fixed">
+        <Link href={"https://wa.me/message/QSOFK4TPGQ2DD1"} target="_blank">
+          <Image src={"/whatsapp.png"} height={60} width={60} alt="whatsapp-icon" />
+        </Link>
+      </div>
     </div>
   );
 };

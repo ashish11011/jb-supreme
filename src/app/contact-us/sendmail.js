@@ -1,33 +1,45 @@
-import emailjs from '@emailjs/browser';
+"use server";
+import { SendEmailCommand, SESClient } from "@aws-sdk/client-ses";
 
-export function sendMail(data) {
-    var templateParams = {...data};
-    emailjs.init({
-        publicKey: 'FBv1BCSG_tOCgDQ-w',
-        // Do not allow headless browsers
-        blockHeadless: true,
-        blockList: {
-            // Block the suspended emails
-            list: ['foo@emailjs.com', 'bar@emailjs.com'],
-            // The variable contains the email address
-            watchVariable: 'dev.jbsupreme@gmail.com',
-        },
-        limitRate: {
-            // Set the limit rate for the application
-            id: 'app',
-            // Allow 1 request per 10s
-            throttle: 10000,
-        },
-    });
+export async function sendMail(data) {
+  const sesClient = new SESClient({
+    region: "ap-south-1",
+    credentials: {
+      accessKeyId: process.env.AS_KEY,
+      secretAccessKey: process.env.SA_KEY,
+    },
+  });
+  var templateParams = { ...data };
+  console.log(templateParams);
+  const html = `
+    <div style="font-family: Arial, sans-serif;">
+      <h2>New Support Request</h2>
 
-    emailjs.send('service_c0fmogd', 'template_nkhsked', templateParams).then(
-        (response) => {
-            console.log('SUCCESS!', response.status, response.text);
-            // return "form is successfully submitted"
+        <p><strong>First Name:</strong> ${templateParams.first_name}</p>
+        <p><strong>Last Name:</strong> ${templateParams.last_name}</p>
+        <p><strong>Email:</strong> ${templateParams.email}</p>
+        <p><strong>Mobile:</strong> ${templateParams.mobile}</p>
+        <p><strong>Message:</strong> ${templateParams.message}</p>
+
+    </div>
+  `;
+
+  const command = new SendEmailCommand({
+    Source: "support@ashishbishnoi.com",
+    Destination: {
+      ToAddresses: ["bishnoi11011@gmail.com"],
+    },
+    Message: {
+      Subject: {
+        Data: "New Support Email",
+      },
+      Body: {
+        Html: {
+          Data: html,
         },
-        (error) => {
-            console.log('FAILED...', error);
-            // return "Something went wrong, please try again"
-        },
-    );
+      },
+    },
+  });
+
+  return await sesClient.send(command);
 }

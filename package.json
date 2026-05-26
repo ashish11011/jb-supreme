@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.1053.0",
     "@emailjs/browser": "^4.4.1",
     "emailjs": "^4.0.3",
     "framer-motion": "^11.8.0",

@@ -9,11 +9,13 @@ const NavBar = () => {
   return (
     <div className=" relative max-w-[92rem] z-40 mx-auto items-center px-6 md:px-4 w-full py-6 flex justify-between">
       <div className=" h-12 md:h-16">
-        <img
-          className=" w-full h-full object-contain"
-          src="./logo-nobg.png"
-          alt=""
-        />
+        <Link href={"/"}>
+          <img
+            className=" w-full h-full object-contain"
+            src="./logo-nobg.png"
+            alt=""
+          />
+        </Link>
       </div>
       <div className=" hidden md:flex text-white items-center gap-4">
         <Link
