@@ -27,7 +27,7 @@ export async function sendMail(data) {
   const command = new SendEmailCommand({
     Source: "support@ashishbishnoi.com",
     Destination: {
-      ToAddresses: ["bishnoi11011@gmail.com"],
+      ToAddresses: ["support@superaxlecompany.com"],
     },
     Message: {
       Subject: {
